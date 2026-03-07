@@ -33,12 +33,15 @@
     <!--Css Link -->
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
-  <body>
+  <body class="bg-[#f7fafc] min-h-screen">
     <!-- Header Section -->
     <header class="bg-white">
-      <div class="navbar bg-base-100 shadow-sm px-20">
+      <div
+        class="navbar w-full bg-base-100 shadow-sm lg:px-20 flex-col lg:flex-row gap-3 items-center justify-center px-0"
+      >
         <div class="flex-1">
-          <a class="btn btn-ghost text-xl">
+          <!-- Logo -->
+          <a class="btn btn-ghost text-xl md:text-2xl">
             <img
               src="./assets/github-logo.png"
               alt="Header logo"
@@ -48,7 +51,8 @@
           </a>
         </div>
         <div class="flex gap-2">
-          <div class="flex items-center border px-2 rounded-lg gap-0">
+          <!-- Search Bar -->
+          <div class="flex items-center border px-1 lg:px-2 rounded-lg gap-0">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input
               type="text"
@@ -56,15 +60,79 @@
               class="input input-bordered w-24 md:w-auto outline-none border-none focus:border-none focus:ring-0 focus:outline-none"
             />
           </div>
-
+          <!-- New Issue Button -->
           <div class="w-full">
-            <button class="btn btn-primary w-full">
+            <button class="btn btn-primary w-full text-sm lg:text-base">
               <i class="fa-solid fa-plus"></i> New Issue
             </button>
           </div>
         </div>
       </div>
     </header>
+
+    <!-- Main Content -->
+
+    <main class="lg:max-w-9/12 mx-auto mt-4 lg:mt-12">
+      <!-- Tab Content  -->
+      <section
+        class="bg-white shadow px-6 py-8 rounded-lg flex gap-3 justify-center"
+      >
+        <button
+          id="allBtn"
+          class="btn btn-primary btn-outline w-4/12 md:w-full max-w-28"
+        >
+          All
+        </button>
+        <button
+          id="openBtn"
+          class="btn btn-primary btn-outline w-4/12 md:w-full max-w-28"
+        >
+          Open
+        </button>
+        <button
+          id="closeBtn"
+          class="btn btn-primary btn-outline w-4/12 md:w-full max-w-28"
+        >
+          Closed
+        </button>
+      </section>
+
+      <!-- Issues Card Section  -->
+
+      <section>
+        <!-- Issues Info Section -->
+        <div
+          class="flex justify-between items-center bg-white mt-4 lg:mt-8 py-8 px-6 shadow rounded"
+        >
+          <!-- Issues Info -->
+          <div class="flex gap-2 justify-center items-center">
+            <img
+              src="./assets/Aperture.png"
+              alt="Aperture logo"
+              class="bg-gray-300 rounded-full p-1 w-10 md:w-12"
+            />
+            <div>
+              <span class="font-bold md:text-2xl">50 Issues</span>
+              <p class="text-[12px] md:text-base">
+                Track and manage your project issues
+              </p>
+            </div>
+          </div>
+          <!-- Info icon -->
+          <div
+            class="font-semibold text-[12px] md:text-base flex gap-1 md:gap-3"
+          >
+            <span
+              ><i class="fa-solid fa-circle-dot text-green-500"></i> Open</span
+            >
+            <span
+              ><i class="fa-solid fa-circle-dot text-[#A855F7]"></i>
+              Closed</span
+            >
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Js link -->
     <script src="./script/script.js"></script>
