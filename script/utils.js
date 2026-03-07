@@ -1,0 +1,66 @@
+const createLabelTag = (values) => {
+  //   console.log(values);
+  const labelTag = values.map((ele) => {
+    if (ele == "bug") {
+      return `<span class="bg-[#FECACA] text-[#EF4444] font-semibold w-auto capitalize text-center flex justify-center items-center px-3 rounded-2xl gap-1 py-1 "><i class="fa-solid fa-bug"></i>${ele}</span> `;
+    } else if (ele == "help wanted") {
+      return `<span  class="bg-[#FDE68A] text-[#F59E0B] font-semibold w-auto capitalize text-center flex justify-center items-center px-3 rounded-2xl gap-1 py-1 "><i class="fa-solid fa-life-ring"></i> ${ele}</span> `;
+    } else {
+      return `<span  class="bg-[#CBFADB] text-[#00A96E] font-semibold w-auto capitalize text-center flex justify-center items-center px-3 rounded-2xl gap-1 py-1  ">
+  <i class="fa-brands fa-flutter"></i>${ele}
+</span>`;
+    }
+  });
+
+  return labelTag.join(" ");
+};
+const authorNameStyle = (name) => {
+  //   const name = "sarah_dev";
+  const names = name.split("_");
+  const capitalize = names.map(
+    (word) => word.charAt(0).toUpperCase() + word.slice(1),
+  );
+  return capitalize.join(" ");
+};
+
+export function createCard(cardsContainer, cardInfo) {
+  const card = document.createElement("div");
+  card.innerHTML = `<div class="card w-full h-full bg-base-100 shadow-sm">
+
+   <div class=" card-body h-full pb-0 ">
+     <div class="flex justify-between ">
+     <span class="bg-[#CBFADB] w-6 rounded-full h-6 flex justify-center items-center">
+      <span class=" w-4 block h-4  border-dotted  border-2 border-[#00A96E] rounded-full"></span>
+      </span>
+     <span 
+     class="font-semibold w-16 capitalize text-center flex justify-center items-center px-3 rounded-2xl 
+   ${
+     cardInfo.priority === "high"
+       ? "bg-[#FECACA] text-[#EF4444]"
+       : cardInfo.priority === "medium"
+         ? "bg-[#FDE68A] text-[#F59E0B] "
+         : "bg-[#CBFADB] text-[#00A96E]"
+   }"> 
+    <span>${cardInfo.priority}</span>
+    </span>
+  </div>
+   
+
+   <h2 class="text-xl font-bold pt-4 flex-1">${cardInfo.title}</h2>
+   <p class="flex-1">${cardInfo.description}</p>
+   
+   
+
+ <div class=" flex justify-start gap-2 items-end text-xs">
+   ${createLabelTag(cardInfo.labels)}
+  </div>
+
+   </div>
+   <div class="divider"></div>
+   <div class="card-body pt-0">
+   <p>${authorNameStyle(cardInfo.author)}</p>
+   <p>${new Date(cardInfo.createdAt).toLocaleDateString()}</p>
+   </div>
+</div> `;
+  cardsContainer.appendChild(card);
+}

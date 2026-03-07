@@ -75,7 +75,7 @@
     <main class="lg:max-w-9/12 mx-auto mt-4 lg:mt-12">
       <!-- Tab Content  -->
       <section
-        class="bg-white shadow px-6 py-8 rounded-lg flex gap-3 justify-center"
+        class="bg-white shadow px-6 py-8 rounded-lg flex gap-3 justify-center md:justify-start"
       >
         <button
           id="allBtn"
@@ -97,7 +97,7 @@
         </button>
       </section>
 
-      <!-- Issues Card Section  -->
+      <!-- Issues Card Info Section  -->
 
       <section>
         <!-- Issues Info Section -->
@@ -132,9 +132,16 @@
           </div>
         </div>
       </section>
+
+      <!-- Issues Cards Section -->
+      <section
+        id="issuesCardSection"
+        class="bg-gray-100 p-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4"
+      ></section>
     </main>
 
     <!-- Js link -->
-    <script src="./script/script.js"></script>
+    <script type="module" src="./script/script.js"></script>
+    <script type="module" src="./script/utils.js"></script>
   </body>
 </html>
