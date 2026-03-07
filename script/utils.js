@@ -14,6 +14,19 @@ const createLabelTag = (values) => {
 
   return labelTag.join(" ");
 };
+
+const statusIcon = (status) => {
+  if (status === "closed") {
+    return `<span class="bg-[#F0E2FF] w-6 rounded-full h-6 flex justify-center items-center">
+   <i class="fa-regular fa-circle-check text-[#A855F7]"></i>
+      </span> `;
+  } else {
+    return `<span class="bg-[#CBFADB] w-6 rounded-full h-6 flex justify-center items-center">
+      <span class=" w-4  h-4  border-dotted  border-2 border-[#00A96E] rounded-full"></span>
+      </span> `;
+  }
+};
+
 const authorNameStyle = (name) => {
   //   const name = "sarah_dev";
   const names = name.split("_");
@@ -25,13 +38,12 @@ const authorNameStyle = (name) => {
 
 export function createCard(cardsContainer, cardInfo) {
   const card = document.createElement("div");
-  card.innerHTML = `<div class="card w-full h-full bg-base-100 shadow-sm">
+  card.innerHTML = `<div class="card w-full h-full bg-base-100 shadow-sm border-t-6 ${cardInfo.status == "closed" ? "border-t-[#A855F7]" : "border-t-[#00A96E]"}">
 
    <div class=" card-body h-full pb-0 ">
      <div class="flex justify-between ">
-     <span class="bg-[#CBFADB] w-6 rounded-full h-6 flex justify-center items-center">
-      <span class=" w-4 block h-4  border-dotted  border-2 border-[#00A96E] rounded-full"></span>
-      </span>
+    ${statusIcon(cardInfo.status)}
+
      <span 
      class="font-semibold w-16 capitalize text-center flex justify-center items-center px-3 rounded-2xl 
    ${
