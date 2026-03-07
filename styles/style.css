@@ -1,0 +1,8 @@
+* {
+  font-family: "Geist", sans-serif;
+}
+@import "tailwindcss";
+
+p {
+  color: #64748b;
+}

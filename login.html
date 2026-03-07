@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GitHub Issues Tracker || Login</title>
+    <!-- Daisy Ui And Tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Link Css & Fav Icon -->
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body class="min-h-screen flex justify-center items-center bg-[#f7fafc]">
+    <main class="px-8 w-full max-w-lg card bg-base-100 py-8 mx-auto">
+      <!-- Login Page Header Section -->
+      <section class="flex juce items-center flex-col pt-8">
+        <img src="./assets/github-logo.png" alt="Git hub logo" />
+        <h1 class="text-[#1F2937] font-bold text-2xl pt-2">
+          GitHub Issues Tracker
+        </h1>
+        <p>Sign in to manage your issues</p>
+      </section>
+      <!-- Form Sectionn -->
+      <section class="py-4">
+        <form action="">
+          <div class="flex flex-col gap-1">
+            <label class="font-medium text-[#1F2937]" for="username"
+              >Username</label
+            >
+            <input
+              placeholder="Enter Username"
+              class="p-2 text-[#64748B] rounded"
+              type="text"
+              name="username"
+              id="username"
+            />
+            <span class="text-[#4A00FF] text-sm">Default: admin</span>
+          </div>
+
+          <div class="flex flex-col gap-1 pt-2 pb-4">
+            <label class="font-medium text-[#1F2937]" for="username"
+              >Password</label
+            >
+            <input
+              placeholder="Enter password"
+              class="p-2 text-[#64748B] rounded"
+              type="password"
+              name="password"
+              id="password"
+            />
+            <span class="text-[#4A00FF] text-sm">Default: admin123</span>
+          </div>
+          <button type="submit" class="btn btn-primary w-full text-lg py-4">
+            Sign In
+          </button>
+        </form>
+      </section>
+      <div class="divider">OR</div>
+      <section>
+        <p class="text-center text-base">Demo Credentials:</p>
+        <div
+          class="flex flex-col justify-center items-center rounded-lg bg-gray-200 py-6"
+        >
+          <span><span class="font-bold">Username:</span> admin </span>
+          <span><span class="font-bold">Password:</span> admin123 </span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
