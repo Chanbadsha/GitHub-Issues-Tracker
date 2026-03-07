@@ -27,7 +27,7 @@
       </section>
       <!-- Form Sectionn -->
       <section class="py-4">
-        <form action="">
+        <form onsubmit="handleSubmit(event)" action="">
           <div class="flex flex-col gap-1">
             <label class="font-medium text-[#1F2937]" for="username"
               >Username</label
@@ -38,6 +38,7 @@
               type="text"
               name="username"
               id="username"
+              required
             />
             <span class="text-[#4A00FF] text-sm">Default: admin</span>
           </div>
@@ -52,6 +53,7 @@
               type="password"
               name="password"
               id="password"
+              required
             />
             <span class="text-[#4A00FF] text-sm">Default: admin123</span>
           </div>
@@ -71,5 +73,8 @@
         </div>
       </section>
     </main>
+
+    <!-- Script Link -->
+    <script src="./script/login.js"></script>
   </body>
 </html>
