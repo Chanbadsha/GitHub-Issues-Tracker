@@ -26,6 +26,32 @@ export const createLabelTag = (values) => {
 
   return labelTag.join(" ");
 };
+export const noDataFound = () => {
+  return `<section class="flex flex-col flex-1  text-center items-center justify-center w-lvh h-[calc(100vh-400px)] text-center p-6 bg-gray-50">
+  <!-- Icon -->
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-16 w-16 text-gray-400 mb-4"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M9 14l2-2 4 4M7 10h10M7 6h10M7 2h10" />
+  </svg>
+
+  <!-- Message -->
+  <h2 class="text-2xl font-semibold text-gray-700 mb-2">No Data Found</h2>
+  <p class="text-gray-500">We couldn’t find any results for your search.</p>
+
+  <!-- Optional Action Button -->
+  <button
+    class="mt-4 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition"
+  >
+    Reload
+  </button>
+</section>`;
+};
 
 const statusIcon = (status) => {
   if (status === "closed") {
@@ -50,7 +76,7 @@ export const authorNameStyle = (name) => {
 
 export function createCard(cardsContainer, cardInfo) {
   const card = document.createElement("div");
-  card.innerHTML = `<div id="${cardInfo.id}" class="card w-full h-full bg-base-100 shadow-sm border-t-6 ${cardInfo.status == "closed" ? "border-t-[#A855F7]" : "border-t-[#00A96E]"}">
+  card.innerHTML = `<div    onclick="my_modal_5.showModal()" id="${cardInfo.id}" class="card w-full h-full bg-base-100 shadow-sm border-t-6 ${cardInfo.status == "closed" ? "border-t-[#A855F7]" : "border-t-[#00A96E]"}">
 
    <div class=" card-body h-full pb-0 ">
      <div class="flex justify-between ">

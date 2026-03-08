@@ -1,10 +1,11 @@
-import { loadData, loadDataById } from "./api.js";
+import { loadData, loadDataById, loadDataBySearch } from "./api.js";
 import {
   addAndRemoveBtnClass,
   authorNameStyle,
   createCard,
   createLabelTag,
   manageSpinner,
+  noDataFound,
 } from "./utils.js";
 const tabContainer = document.getElementById("tab-container");
 const cardsContainer = document.getElementById("issuesCardSection");
@@ -111,4 +112,40 @@ cardsContainer.addEventListener("click", (event) => {
   };
 
   init();
+});
+
+// Search Functioanlit
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", (event) => {
+  const search = event.target.value;
+
+  const init = async () => {
+    manageSpinner(true, cardsContainer);
+    const card = document.createElement("div");
+    cardsContainer.innerHTML = "";
+    let data;
+    if (search) {
+      data = await loadDataBySearch(search);
+    } else {
+      data = await loadData();
+    }
+    manageSpinner(false, cardsContainer);
+
+    if (data.length > 0) {
+      data.forEach((cardInfo) => {
+        createCard(cardsContainer, cardInfo);
+      });
+    } else {
+      cardsContainer.innerHTML = "";
+      card.innerHTML = `${noDataFound()}`;
+      cardsContainer.appendChild(card);
+    }
+
+    console.log(data);
+  };
+
+  init();
+
+  // Example: console.log(event.target.value) to get input
 });
