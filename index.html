@@ -136,9 +136,22 @@
       <!-- Issues Cards Section -->
       <section
         id="issuesCardSection"
-        class="bg-gray-100 p-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 pb-6 shadow"
+        onclick="my_modal_5.showModal()"
+        class="bg-gray-100 text-start p-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 pb-6 shadow"
       ></section>
     </main>
+
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box xl:max-w-2xl w-full">
+        <div id="modal-container"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn btn-primary outline-none">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
 
     <!-- Js link -->
     <script type="module" src="./script/script.js"></script>

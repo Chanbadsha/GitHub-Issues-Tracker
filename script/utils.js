@@ -1,4 +1,4 @@
-const createLabelTag = (values) => {
+export const createLabelTag = (values) => {
   //   console.log(values);
   const labelTag = values.map((ele) => {
     if (ele == "bug") {
@@ -27,7 +27,7 @@ const statusIcon = (status) => {
   }
 };
 
-const authorNameStyle = (name) => {
+export const authorNameStyle = (name) => {
   //   const name = "sarah_dev";
   const names = name.split("_");
   const capitalize = names.map(
@@ -38,7 +38,7 @@ const authorNameStyle = (name) => {
 
 export function createCard(cardsContainer, cardInfo) {
   const card = document.createElement("div");
-  card.innerHTML = `<div class="card w-full h-full bg-base-100 shadow-sm border-t-6 ${cardInfo.status == "closed" ? "border-t-[#A855F7]" : "border-t-[#00A96E]"}">
+  card.innerHTML = `<div id="${cardInfo.id}" class="card w-full h-full bg-base-100 shadow-sm border-t-6 ${cardInfo.status == "closed" ? "border-t-[#A855F7]" : "border-t-[#00A96E]"}">
 
    <div class=" card-body h-full pb-0 ">
      <div class="flex justify-between ">
@@ -60,7 +60,7 @@ export function createCard(cardsContainer, cardInfo) {
 
    <h2 class="text-xl font-bold pt-4 flex-1">${cardInfo.title}</h2>
    <p class="flex-1">${cardInfo.description}</p>
-   
+
    
 
  <div class=" flex justify-start gap-2 items-end text-xs">
