@@ -1,4 +1,3 @@
-// window.location.href = "index.html";
 const demoUserName = "admin";
 const demoUserPassword = "admin123";
 const handleSubmit = (e) => {
@@ -6,8 +5,8 @@ const handleSubmit = (e) => {
   const username = e.target.username.value;
   const password = e.target.password.value;
   if (username == demoUserName && password == demoUserPassword) {
-    console.log(true);
-    window.location.href = "index.html";
+    // console.log(true);
+    window.location.href = "home.html";
   } else {
     alert("Username and password not matched");
   }

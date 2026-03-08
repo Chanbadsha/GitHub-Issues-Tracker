@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page || GitHub Issues Tracker</title>
+    <!--  FavIcon-->
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+
+    <!-- Daisy Ui And Tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--Css Link -->
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body class="bg-[#f7fafc] min-h-screen">
+    <!-- Header Section -->
+    <header class="bg-white">
+      <div
+        class="navbar w-full bg-base-100 shadow-sm lg:px-20 flex-col lg:flex-row gap-3 items-center justify-center px-0"
+      >
+        <div class="flex-1">
+          <!-- Logo -->
+          <a class="btn btn-ghost text-xl md:text-2xl">
+            <img
+              src="./assets/github-logo.png"
+              alt="Header logo"
+              class="max-w-11/12 w-8 mr-2"
+            />
+            <span>GitHub Issues Tracker</span>
+          </a>
+        </div>
+        <div class="flex gap-2">
+          <!-- Search Bar -->
+          <div class="flex items-center border px-1 lg:px-2 rounded-lg gap-0">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="text"
+              placeholder="Search issues..."
+              class="input input-bordered w-24 md:w-auto outline-none border-none focus:border-none focus:ring-0 focus:outline-none"
+            />
+          </div>
+          <!-- New Issue Button -->
+          <div class="w-full">
+            <button class="btn btn-primary w-full text-sm lg:text-base">
+              <i class="fa-solid fa-plus"></i> New Issue
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+
+    <main class="lg:max-w-9/12 mx-auto mt-4 lg:mt-12 pb-6">
+      <!-- Tab Content  -->
+      <section
+        id="tab-container"
+        class="bg-white shadow px-6 py-8 rounded-lg flex gap-3 justify-center md:justify-start"
+      >
+        <button id="allBtn" class="btn btn-primary w-4/12 md:w-full max-w-28">
+          All
+        </button>
+        <button
+          id="openBtn"
+          class="btn btn-primary btn-outline w-4/12 md:w-full max-w-28"
+        >
+          Open
+        </button>
+        <button
+          id="closedBtn"
+          class="btn btn-primary btn-outline w-4/12 md:w-full max-w-28"
+        >
+          Closed
+        </button>
+      </section>
+
+      <!-- Issues Card Info Section  -->
+
+      <section>
+        <!-- Issues Info Section -->
+        <div
+          class="flex justify-between items-center bg-white mt-4 lg:mt-8 py-8 px-6 shadow rounded"
+        >
+          <!-- Issues Info -->
+          <div class="flex gap-2 justify-center items-center">
+            <img
+              src="./assets/Aperture.png"
+              alt="Aperture logo"
+              class="bg-gray-300 rounded-full p-1 w-10 md:w-12"
+            />
+            <div>
+              <span class="font-bold md:text-2xl">50 Issues</span>
+              <p class="text-[12px] md:text-base">
+                Track and manage your project issues
+              </p>
+            </div>
+          </div>
+          <!-- Info icon -->
+          <div
+            class="font-semibold text-[12px] md:text-base flex gap-1 md:gap-3"
+          >
+            <span
+              ><i class="fa-solid fa-circle-dot text-green-500"></i> Open</span
+            >
+            <span
+              ><i class="fa-solid fa-circle-dot text-[#A855F7]"></i>
+              Closed</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Issues Cards Section -->
+      <section
+        id="spinnerContainer"
+        class="w-full min-w-full hidden h-full min-h-[calc(100vh-400px)] border flex justify-center items-center"
+      >
+        <span class="loading loading-infinity loading-xl"></span>
+      </section>
+
+      <section
+        id="issuesCardSection"
+        onclick="my_modal_5.showModal()"
+        class="bg-gray-100 text-start p-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 pb-6 shadow"
+      ></section>
+    </main>
+
+    <dialog id="my_modal_5" class="modal modal-middle">
+      <div class="modal-box xl:max-w-2xl w-full px-1 md:px-6">
+        <div id="modal-container"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn btn-primary outline-none">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Js link -->
+    <script type="module" src="./script/script.js"></script>
+    <script type="module" src="./script/utils.js"></script>
+  </body>
+</html>

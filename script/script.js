@@ -1,17 +1,62 @@
 import { loadData, loadDataById } from "./api.js";
-import { authorNameStyle, createCard, createLabelTag } from "./utils.js";
+import {
+  addAndRemoveBtnClass,
+  authorNameStyle,
+  createCard,
+  createLabelTag,
+  manageSpinner,
+} from "./utils.js";
+const tabContainer = document.getElementById("tab-container");
 const cardsContainer = document.getElementById("issuesCardSection");
 const modalContainer = document.getElementById("modal-container");
 
 const init = async () => {
+  manageSpinner(true, cardsContainer);
+  cardsContainer.innerHTML = "";
   const data = await loadData();
-
+  manageSpinner(false, cardsContainer);
   data.forEach((cardInfo) => {
     createCard(cardsContainer, cardInfo);
   });
 };
 
 init();
+
+tabContainer.addEventListener("click", (event) => {
+  let id = "";
+
+  if (event.target.id.includes("openBtn")) {
+    addAndRemoveBtnClass(event.target.closest("#tab-container"), "openBtn");
+    id = "open";
+  }
+  if (event.target.id.includes("closedBtn")) {
+    addAndRemoveBtnClass(event.target.closest("#tab-container"), "closedBtn");
+    id = "closed";
+  }
+  if (event.target.id.includes("allBtn")) {
+    addAndRemoveBtnClass(event.target.closest("#tab-container"), "allBtn");
+  }
+  const init = async () => {
+    const data = await loadData();
+
+    if (id) {
+      manageSpinner(true, cardsContainer);
+      cardsContainer.innerHTML = "";
+      const filteredData = data.filter((data) => data.status == id);
+      filteredData.forEach((cardInfo) => {
+        createCard(cardsContainer, cardInfo);
+      });
+      manageSpinner(false, cardsContainer);
+    } else if (event.target.id.includes("allBtn")) {
+      cardsContainer.innerHTML = "";
+      data.forEach((cardInfo) => {
+        createCard(cardsContainer, cardInfo);
+      });
+    }
+  };
+
+  init();
+});
 
 cardsContainer.addEventListener("click", (event) => {
   const id = event.target.closest(".card").id;

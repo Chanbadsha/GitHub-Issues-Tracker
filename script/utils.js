@@ -1,3 +1,15 @@
+export const manageSpinner = (status, container) => {
+  let statusIcon = status;
+  const spinnerContainer = document.getElementById("spinnerContainer");
+  if (statusIcon) {
+    spinnerContainer.classList.remove("hidden");
+    container.classList.add("hidden");
+  } else {
+    spinnerContainer.classList.add("hidden");
+    container.classList.remove("hidden");
+  }
+};
+
 export const createLabelTag = (values) => {
   //   console.log(values);
   const labelTag = values.map((ele) => {
@@ -76,3 +88,15 @@ export function createCard(cardsContainer, cardInfo) {
 </div> `;
   cardsContainer.appendChild(card);
 }
+
+export const addAndRemoveBtnClass = (container, child) => {
+  const allBtn = container.querySelector("#allBtn");
+  const closedBtn = container.querySelector("#closedBtn");
+  const openBtn = container.querySelector("#openBtn");
+  const addStyleBtn = container.querySelector(`#${child}`);
+
+  allBtn.classList.add("btn-outline");
+  closedBtn.classList.add("btn-outline");
+  openBtn.classList.add("btn-outline");
+  addStyleBtn.classList.remove("btn-outline");
+};
