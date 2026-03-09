@@ -27,7 +27,9 @@ export const createLabelTag = (values) => {
   return labelTag.join(" ");
 };
 export const noDataFound = () => {
-  return `<section class="flex flex-col flex-1 w-screen  items-center justify-center  text-center py-28 bg-gray-50">
+  return `<section
+  class="w-full col-span-full flex flex-col h-[calc(100vh-400px)] justify-center text-center items-center py-28 bg-gray-50 "
+>
   <!-- Icon -->
   <svg
     xmlns="http://www.w3.org/2000/svg"

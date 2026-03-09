@@ -138,8 +138,7 @@ searchInput.addEventListener("keyup", (event) => {
       });
     } else {
       cardsContainer.innerHTML = "";
-      cardsContainer.classList.add("flex", "justify-center", "w-full");
-      cardsContainer.classList.remove("grid");
+      card.classList.add("col-span-full");
       card.innerHTML = `${noDataFound()}`;
       cardsContainer.appendChild(card);
     }
