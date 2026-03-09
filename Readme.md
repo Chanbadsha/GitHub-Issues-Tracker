@@ -1,4 +1,4 @@
-### Difference Between var, let, and const
+### 1 Difference Between var, let, and const
 
 In JavaScript, `var`, `let`, and `const` are used to declare variables. The main difference between them is their scope, redeclaration, and reassignment behavior.
 
@@ -8,24 +8,24 @@ In JavaScript, the var keyword is used to declare variables. It was the only way
 
 `const` was also introduced in ES6 and is used for variables whose value should not change. It has block scope like `let`, but it cannot be redeclared or reassigned after it is declared, and it must be initialized at the time of declaration.
 
-### What is the Spread Operator (...)?
+### 2 What is the Spread Operator (...)?
 
--- The spread operator (`...`) in JavaScript is used to expand elements of an array or properties of an object into another array or object. It makes copying, merging, and passing values easier and cleaner in modern JavaScript.
+\_\_ The spread operator (`...`) in JavaScript is used to expand elements of an array or properties of an object into another array or object. It makes copying, merging, and passing values easier and cleaner in modern JavaScript.
 
-### Difference Between map(), filter(), and forEach()
+### 3 Difference Between map(), filter(), and forEach()
 
---`map()`, `filter()`, and `forEach()` are JavaScript array methods used to work with array elements.
+- `map()`, `filter()`, and `forEach()` are JavaScript array methods used to work with array elements.
 
---`map()` is used to create a new array by applying a function to every element of the original array. It returns a new array with the modified values.
+- `map()` is used to create a new array by applying a function to every element of the original array. It returns a new array with the modified values.
 
---`filter()` is used to create a new array that only includes elements that match a specific condition. It returns a new array with the filtered values.
+- `filter()` is used to create a new array that only includes elements that match a specific condition. It returns a new array with the filtered values.
 
 --`forEach()` is used to loop through each element of an array and perform an action. It does not return a new array; it only executes the function for each element.
 
-### What is an Arrow Function?
+### 4 What is an Arrow Function?
 
 --An arrow function is a shorter way to write functions in JavaScript, introduced in ES6. It uses the `=>` syntax and makes the code cleaner and easier to read. Arrow functions are often used for simple functions and callbacks.
 
-### What are Template Literals?
+### 5 What are Template Literals?
 
 --Template literals are JavaScript string literals, introduced in ES6, that allow for easier string interpolation, multi-line strings, and embedded expressions using backticks (`) instead of quotes.
