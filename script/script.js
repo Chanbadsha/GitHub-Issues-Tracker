@@ -70,10 +70,10 @@ cardsContainer.addEventListener("click", (event) => {
   <div class="card-body w-full">
     <h2 class="font-bold text-xl md:text-2xl">${data.title}</h2>
 <div class="flex md:items-center gap-2 justify-start pb-3 pt-1 flex-col md:flex-row ">
-<button class="bg-[#CBFADB] text-[#00A96E] font-semibold w-16 capitalize text-center flex justify-center items-center px-3 rounded-2xl" >Opened</button>
+<button class="bg-[#CBFADB] text-[#00A96E] font-semibold w-16 capitalize text-center flex justify-center items-center px-3 rounded-2xl" >${data.status}</button>
 <div class="flex items-center gap-1">
 <span class="w-2 rounded-full h-2 bg-gray-500 inline-block"></span>
-<span class=" inline-block">Opened By ${authorNameStyle(data.assignee) ? `${authorNameStyle(data.assignee)}` : "Chan Badsha Bhuiyan"}</span></div>
+<span class=" inline-block capitalize">${data.status} By ${authorNameStyle(data.assignee) ? `${authorNameStyle(data.assignee)}` : "Chan Badsha Bhuiyan"}</span></div>
 <div class="flex items-center gap-1">
 <span class="w-2 rounded-full h-2 bg-gray-500 inline-block"></span>
 <span>${new Date(data.updatedAt).toLocaleDateString()}</span>
